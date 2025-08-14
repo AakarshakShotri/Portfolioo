@@ -37,7 +37,7 @@ export default function Navbar({ resumeUrl }: { resumeUrl?: string }) {
     }, []);
 
     return (
-        <nav className="sticky top-0 z-40 border-b border-[var(--border)] bg-white backdrop-blur">
+        <nav className="sticky top-0 z-40 border-b border-[var(--border)] bg-red-500 backdrop-blur">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
                 <Link href="#hero" className="font-semibold text-[var(--text)]">SDE2 Portfolio</Link>
                 {/* Desktop links */}
