@@ -1,4 +1,4 @@
-import {
+import type {
   Achievement,
   Certification,
   Experience,
@@ -100,8 +100,6 @@ export const projects: Project[] = [
       "Auto-scaling Lambda and Firehose connectors",
     ],
     images: ["/projects/hyperdrive.png"], // the architecture diagram you shared
-    github: "https://github.com/yourhandle/realtime-analytics",
-    live: "https://analytics.example.com",
     category: "Data",
     challenges: [
       "Hot partition skew in Kinesis streams",
@@ -519,7 +517,7 @@ export const projects: Project[] = [
   },
   {
     id: "error-alerting",
-    title: "Error Alerting & ChatOps Integration",
+    title: "Error Alerting & Chat Based Tools Integration",
     summary:
       "Integrated error alerts with team communication tools for faster response times.",
     problem:

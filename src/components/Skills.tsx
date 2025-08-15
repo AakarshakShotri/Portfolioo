@@ -43,7 +43,7 @@ export default function Skills() {
     }, [activeIndex]);
 
     return (
-        <Section id="skills" title="Technical Skills & Tools" subtitle="">
+        <Section id="skills" title="Technical Skills & Tools" subtitle="My engineering toolkit">
             <div className="space-y-6">
                 <div role="tablist" aria-label="Skills categories" className="flex flex-wrap gap-2" onKeyDown={onKeyDown}>
                     {tabs.map((t) => {

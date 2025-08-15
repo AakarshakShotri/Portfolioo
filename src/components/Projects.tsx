@@ -12,7 +12,7 @@ export default function Projects() {
     const filtered = useMemo(() => (filter === "All" ? projects : projects.filter((p) => p.category === filter)), [filter]);
 
     return (
-        <Section id="projects" title="Featured Projects" subtitle="">
+        <Section id="projects" title="Featured Projects" subtitle="Building systems that scale, perform, and solve real problems">
             <div className="mb-6 flex flex-wrap gap-2">
                 {filters.map((f) => (
                     <button key={f} onClick={() => setFilter(f)} className={`px-3 py-1.5 rounded-md text-sm border ${filter === f ? "btn-accent border-transparent" : "border-default text-[var(--muted-text)] hover:bg-[var(--accent-weak)]"}`}>
@@ -20,7 +20,7 @@ export default function Projects() {
                     </button>
                 ))}
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filtered.map((p) => (
                     <article key={p.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 flex flex-col gap-3">
                         <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -46,5 +46,3 @@ export default function Projects() {
         </Section>
     );
 }
-
-
