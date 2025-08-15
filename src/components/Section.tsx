@@ -16,7 +16,7 @@ export default function Section({ id, title, subtitle, children }: Props) {
             <div className="max-w-6xl mx-auto px-4">
                 {title ? (
                     <div className="mb-10">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold" >
                             {title}
                         </h2>
                         {subtitle ? (
@@ -24,14 +24,10 @@ export default function Section({ id, title, subtitle, children }: Props) {
                         ) : null}
                     </div>
                 ) : null}
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+                <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
                     {children}
                 </motion.div>
             </div>
         </section>
     );
 }
-
-
-
-
