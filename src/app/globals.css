@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  /* Light (blue/white) */
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --border: #e5e7eb; /* slate-200 */
+  --text: #0f172a; /* slate-900 */
+  --muted-text: #3d4b5f; /* slate-600 */
+  --accent: #2563eb; /* blue-600 */
+  --accent-contrast: #ffffff;
+  --accent-weak: #dbeafe; /* blue-100 */
+}
+
+/* Auto dark mode using system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* Dark (navy/teal) */
+    --bg: #0b0f14;        /* page */
+    --surface: #111823;   /* cards */
+    --border: #293341;    /* dividers */
+    --text: #eaf2fb;      /* main text */
+    --muted-text: #fefefe;/* subtle */
+    --accent: #658dc2;    /* teal-500 */
+    --accent-contrast: #062a27;
+    --accent-weak: rgba(162, 170, 189, 0.15);
+  }
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Soft background accents */
+.accent-gradient {
+  background: radial-gradient(1200px 800px at 10% -10%, var(--accent-weak), transparent 60%);
+}
+
+/* Card defaults */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Utilities */
+.text-muted {
+  color: var(--muted-text);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn-accent:hover {
+  filter: brightness(0.95);
+}
