@@ -1,10 +1,10 @@
 "use client";
 
 import GridBase from "@/components/skills/GridBase";
-import { GiArtificialIntelligence } from "react-icons/gi";
-import { SiPython, SiTensorflow, SiPytorch, SiOpenai, SiPandas, SiNumpy, SiScikitlearn } from "react-icons/si";
-import { TbLink, TbBinaryTree, TbTopologyStar3 } from "react-icons/tb";
-import { FaRobot, FaBrain, FaMicrophone, FaLanguage } from "react-icons/fa";
+import { SiPython, SiTensorflow, SiPytorch, SiOpenai, SiPandas, SiNumpy, SiLangchain } from "react-icons/si";
+import { TbMessageChatbot, TbBrain, TbGraph, TbRoute } from "react-icons/tb";
+import { FaRobot, FaMicrophone } from "react-icons/fa";
+import { BsDatabaseFillGear } from "react-icons/bs";
 
 export default function AIMLGrid() {
     return (
@@ -15,15 +15,15 @@ export default function AIMLGrid() {
                 { name: "PyTorch", Icon: SiPytorch },
                 { name: "Pandas", Icon: SiPandas },
                 { name: "NumPy", Icon: SiNumpy },
-                { name: "NLTK", Icon: FaLanguage },
-                { name: "RAG", Icon: GiArtificialIntelligence },
-                { name: "Pipecat", Icon: FaRobot },
-                { name: "LangChain", Icon: TbBinaryTree },
-                { name: "LangGraph", Icon: TbTopologyStar3 },
-                { name: "LangFuse", Icon: TbLink },
-                { name: "Braintrust Tracing", Icon: FaBrain },
                 { name: "OpenAI API", Icon: SiOpenai },
-                { name: "TTS/STT Pipelines", Icon: FaMicrophone },
+                { name: "LangChain", Icon: SiLangchain },
+                { name: "LangGraph", Icon: TbGraph },
+                { name: "RAG", Icon: BsDatabaseFillGear },
+                { name: "Pipecat", Icon: FaRobot },
+                { name: "LangFuse", Icon: TbRoute },
+                { name: "Agents", Icon: TbMessageChatbot },
+                { name: "LLMs", Icon: TbBrain },
+                { name: "TTS/STT", Icon: FaMicrophone },
             ]}
         />
     );

@@ -10,7 +10,7 @@ import {
     SiAmazondynamodb, 
     SiSqlite 
 } from "react-icons/si";
-import { TbVectorBezier } from "react-icons/tb"; // for Vectara
+import { TbChartCandle, TbVectorTriangle } from "react-icons/tb";
 
 export default function DatabasesGrid() {
     return (
@@ -23,7 +23,8 @@ export default function DatabasesGrid() {
                 { name: "Elasticsearch", Icon: SiElasticsearch },
                 { name: "DynamoDB", Icon: SiAmazondynamodb },
                 { name: "SQLite", Icon: SiSqlite },
-                { name: "Vectara", Icon: TbVectorBezier }, // custom mapping
+                { name: "KDB+/q", Icon: TbChartCandle },
+                { name: "Vectara", Icon: TbVectorTriangle },
             ]}
         />
     );

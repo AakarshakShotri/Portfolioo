@@ -7,8 +7,11 @@ import {
     SiApacheflink, 
     SiApachespark, 
     SiSnowflake, 
-    SiDbt 
+    SiDbt,
+    SiApachehadoop,
+    SiAmazonredshift
 } from "react-icons/si";
+import { TbTransform } from "react-icons/tb";
 
 export default function DataGrid() {
     return (
@@ -20,6 +23,9 @@ export default function DataGrid() {
                 { name: "Apache Spark", Icon: SiApachespark },
                 { name: "Apache Flink", Icon: SiApacheflink },
                 { name: "Apache Kafka", Icon: SiApachekafka },
+                { name: "Hadoop", Icon: SiApachehadoop },
+                { name: "Redshift", Icon: SiAmazonredshift },
+                { name: "ETL Pipelines", Icon: TbTransform },
             ]}
         />
     );

@@ -12,19 +12,19 @@ export const siteMeta: SiteMeta = {
   role: "SDE2",
   location: "",
   valueProposition:
-    "SDE-2 | Staff Data Infrastructure Engineer| Data & DevOps | AWS & GCP | Python | AI Streaming & Pipelines",
+    "Software Engineer focused on Data Infrastructure, DevOps, and AI Systems",
   metrics: [
     { label: "Projects Led", value: "10+" },
     { label: "Uptime", value: "99.9%" },
     { label: "Cost Savings", value: "$2M+" },
   ],
   about: [
-    "I’m Aakarshak Shotri, a software engineer who enjoys solving tough engineering problems by combining data infrastructure, DevOps practices, and AI systems.",
-    "Over the last few years, I’ve designed AI streaming agents, large-scale data pipelines, and cloud-native microservices that power real-time insights and business-critical applications. From migrating high-traffic monoliths into async microservices to automating deployments with modern CI/CD, I enjoy tackling challenges that push both performance and reliability to the next level",
-    "I'm really passionate about backend engineering, data platforms, and AI. Whether I'm working on cloud stuff with AWS/GCP, setting up data pipelines with Airflow and Spark, or playing around with LLMs and streaming agents, I get excited about building systems that actually work well and the ones that can handle growth, stay flexible, and make a real difference.",
-    "Beyond just the tech stuff, I really enjoy taking full ownership: figuring out what the business actually needs, planning out the system design, and building solutions that are both innovative and reliable.",
+    "Hi, I am Aakarshak. I work as a software engineer and I really enjoy building things that solve real problems. My main areas are data infrastructure, cloud systems, and AI.",
+    "Over the past four years, I have worked on a variety of projects. I have built streaming pipelines that process data in real time, moved legacy systems to modern microservices, and set up deployment workflows that teams can rely on. Most of my work involves Python, AWS, and Kubernetes.",
+    "What I find most interesting is taking a messy problem and turning it into something clean and functional. I like working with data pipelines using tools like Airflow and Spark. I have also spent time building AI systems, including voice agents and retrieval systems that connect language models to company knowledge.",
+    "I care about writing code that is easy to understand and maintain. I prefer simple solutions over clever ones, and I always try to think about how my work will affect the people using it.",
   ],
-  yearsExperience: 3,
+  yearsExperience: 4,
   projectsDelivered: 25,
   techMastered: 40,
   socials: [
@@ -71,11 +71,11 @@ export const projects: Project[] = [
     id: "realtime-analytics",
     title: "Realtime Analytics Pipeline",
     summary:
-      "High-throughput streaming platform with sub-second insights and resilient data pipelines.",
+      "A streaming platform I built to give teams instant visibility into business metrics instead of waiting hours for batch jobs.",
     problem:
-      "Existing event pipelines were fragmented across teams, leading to high latency, duplicate processing, and operational overhead. Business stakeholders had to wait minutes or hours for critical insights.",
+      "Different teams had their own event pipelines that did not talk to each other. Data was often duplicated, delayed, or just missing. People had to wait a long time before they could see what was happening.",
     solution:
-      "Designed and deployed a fault-tolerant real-time analytics platform on AWS. The pipeline ingests high-volume client events through ALB → Kinesis streams → Lambda processors, applies real-time transformations with Kinesis Analytics / Flink, and persists results into Cassandra and Snowflake for both OLTP and OLAP use cases. Firehose connectors stream processed data to S3 for long-term storage. Downstream dashboards (Next.js) provide sub-second visibility into key metrics.",
+      "I built a real time analytics system on AWS. Events flow from our load balancer into Kinesis, get processed by Lambda functions, and then Flink handles the transformations. The data ends up in Cassandra for fast lookups and Snowflake for analytics. I also built dashboards in Next.js so teams can see metrics updating live.",
     technologies: [
       "AWS Kinesis",
       "AWS Lambda",
@@ -92,33 +92,33 @@ export const projects: Project[] = [
       "Fluentd",
     ],
     features: [
-      "Exactly-once processing and deduplication",
-      "Sub-second latency from ingest to dashboard",
-      "Backpressure handling with Flink + Kinesis",
-      "Multi-sink writes (Cassandra, Snowflake, S3)",
-      "Role-based dashboards for teams and operations",
-      "Auto-scaling Lambda and Firehose connectors",
+      "Each event is processed exactly once",
+      "Metrics show up in dashboards within a second",
+      "Handles traffic spikes without dropping data",
+      "Writes to multiple databases at the same time",
+      "Different views for different teams",
+      "Scales automatically based on load",
     ],
-    images: ["/projects/hyperdrive.png"], // the architecture diagram you shared
+    images: ["/projects/hyperdrive.png"],
     category: "Data",
     challenges: [
-      "Hot partition skew in Kinesis streams",
-      "Schema evolution across services",
-      "Coordinating OLTP (Cassandra) vs OLAP (Snowflake) sinks",
-      "Ensuring fault-tolerance during backfills",
+      "Some partitions got way more traffic than others",
+      "Keeping schemas consistent across services",
+      "Making sure both fast and slow storage stayed in sync",
+      "Backfilling data without breaking the live system",
     ],
     impact:
-      "Reduced data-to-insight latency by 95%, enabling true real-time decision-making. Cut $1M+/year in operational costs by consolidating fragmented pipelines into a single resilient platform. Improved developer velocity with standardized schemas and automated monitoring.",
+      "Teams now get insights in seconds instead of hours. We also consolidated several separate pipelines into one, which saved money and made things easier to maintain.",
   },
   {
     id: "analytics-warehouse-modernization",
     title: "Analytics Pipeline Migration",
     summary:
-      "Transformed legacy data warehouse stack into a modern Snowflake + DBT analytics platform running on EKS.",
+      "Moved our analytics from an old Hadoop setup to Snowflake and DBT, making queries faster and the whole system easier to work with.",
     problem:
-      "Analytics workloads were slow and costly on a legacy PySpark + Hadoop stack, with batch jobs often failing to deliver timely insights. Initial migration to Snowflake improved querying but lacked flexibility and infra-level reliability.",
+      "Our old analytics ran on PySpark and Hadoop. Jobs were slow and expensive, and when something broke it was hard to debug. We tried Snowflake first but the initial setup was not flexible enough.",
     solution:
-      "Led a full modernization of the analytics stack by migrating workloads from PySpark/Hadoop to Snowflake + DBT for transformations. Designed modular DBT models with clear lineage, reducing complexity. Worked on the infrastructure layer to move workloads from basic Snowflake-managed services to an EKS cluster for containerized execution and better cost/performance control.",
+      "I led the migration to Snowflake with DBT for transformations. I set up modular DBT models so you can trace where data comes from. I also moved the workloads to run on Kubernetes so we have more control over costs and can scale as needed.",
     technologies: [
       "Snowflake",
       "DBT",
@@ -128,29 +128,29 @@ export const projects: Project[] = [
       "Terraform",
     ],
     features: [
-      "DBT-based modular SQL transformations with lineage tracking",
-      "Optimized Snowflake warehouses for cost efficiency",
-      "Containerized execution of workloads on Kubernetes (EKS)",
-      "Automated deployment via Terraform and CI/CD pipelines",
+      "Modular SQL transformations you can trace end to end",
+      "Snowflake warehouses tuned for cost",
+      "Jobs run in containers on Kubernetes",
+      "Everything deploys automatically through CI/CD",
     ],
     category: "Data",
     challenges: [
-      "Migrating schemas and transformations from PySpark/Hadoop",
-      "Balancing infra costs between Snowflake compute and EKS",
-      "Ensuring reproducibility across environments",
+      "Translating old PySpark logic into SQL",
+      "Keeping costs reasonable between Snowflake and Kubernetes",
+      "Making sure dev, staging, and prod all behave the same",
     ],
     impact:
-      "Cut query runtime by 70% and lowered analytics infra costs by ~40%. Enabled faster experimentation, reliable analytics pipelines, and consistent environments across dev/staging/prod.",
+      "Queries run much faster now and costs went down significantly. Analysts can experiment more freely because the system is reliable.",
   },
   {
     id: "workflow-automation-airflow",
     title: "Workflow Automation with Airflow",
     summary:
-      "Migrated fragile ETL pipelines into modern Airflow DAGs, improving reliability and scalability.",
+      "Replaced our old ETL jobs with Airflow workflows that actually work reliably and are easy to monitor.",
     problem:
-      "Legacy ETL jobs built with Informatica were brittle, hard to monitor, and required frequent manual intervention. Failures often caused delayed router activations and policy updates, impacting operations.",
+      "We had legacy Informatica jobs that broke all the time. When they failed, someone had to manually fix them, and that often delayed important updates like router activations.",
     solution:
-      "Re-architected legacy pipelines into modular Airflow DAGs with built-in retries, monitoring, and alerting. Automated router activation and policy updates, while adding observability hooks into Grafana and Sentry for proactive alerts. The new workflows were containerized and deployed on Kubernetes, ensuring scalable and reliable execution.",
+      "I rewrote these pipelines as Airflow DAGs. Each job is now modular with automatic retries. I added Grafana dashboards and Sentry alerts so we know right away when something goes wrong. Everything runs in containers on Kubernetes.",
     technologies: [
       "Apache Airflow",
       "PySpark",
@@ -160,19 +160,19 @@ export const projects: Project[] = [
       "Sentry",
     ],
     features: [
-      "Automated router activation and policy updates",
-      "Retry policies with error handling",
-      "End-to-end monitoring and alerting",
-      "Containerized DAG execution on Kubernetes",
+      "Router activations and policy updates happen automatically",
+      "Jobs retry on failure with proper error handling",
+      "Dashboards show pipeline health in real time",
+      "Runs in containers so it scales easily",
     ],
     challenges: [
-      "Refactoring monolithic PySpark jobs into smaller DAG tasks",
-      "Managing schema drift during migration",
-      "Ensuring zero downtime during cutover",
+      "Breaking big PySpark jobs into smaller pieces",
+      "Handling schema changes during the migration",
+      "Switching over without any downtime",
     ],
     category: "Data",
     impact:
-      "Reduced pipeline failures by 80% and eliminated manual interventions. Enabled operations teams to rely on fully automated, observable workflows that scale with traffic.",
+      "Pipelines fail much less often now, and when issues come up the team gets alerted immediately. No more manual interventions.",
   },
 
   // Devops
@@ -180,11 +180,11 @@ export const projects: Project[] = [
     id: "ci-cd-automation",
     title: "CI/CD Workflow Automation",
     summary:
-      "Reduced deployment time and improved release stability with GitOps pipelines.",
+      "Set up automated deployment pipelines so the team could ship faster without worrying about breaking things.",
     problem:
-      "Manual deployments caused inconsistent releases and slowed down development velocity. Rollbacks were painful, and deployment visibility was limited.",
+      "Deployments were manual and error prone. Every release was stressful, rollbacks were a pain, and nobody really knew what was deployed where.",
     solution:
-      "Designed and implemented CI/CD pipelines using Jenkins and GitHub Actions integrated with ArgoCD. Shifted to a GitOps model with declarative manifests and Terraform-based infra provisioning. Added chat-based release alerts for visibility.",
+      "I built CI/CD pipelines with Jenkins and GitHub Actions, connected to ArgoCD for deployments. Everything is defined in code with Terraform and Kubernetes manifests. I also added Slack notifications so the team knows when releases go out.",
     technologies: [
       "Jenkins",
       "GitHub Actions",
@@ -194,29 +194,29 @@ export const projects: Project[] = [
       "Slack Alerts",
     ],
     features: [
-      "Automated build-test-deploy cycle",
-      "GitOps with declarative manifests",
-      "Chat-based release visibility",
-      "Rollback automation",
+      "Code gets built, tested, and deployed automatically",
+      "All infrastructure is defined in Git",
+      "Release notifications go to Slack",
+      "Rolling back is just a Git revert away",
     ],
     challenges: [
-      "Coordinating infra across multiple environments",
-      "Ensuring zero-downtime deployments",
-      "Standardizing manifests for microservices",
+      "Keeping multiple environments in sync",
+      "Making sure deployments do not cause downtime",
+      "Getting everyone to use the same manifest format",
     ],
     impact:
-      "Cut deployment time by 60% and improved release stability. Developers gained full visibility of deployments, reducing production errors.",
+      "Deployments are much faster and more reliable now. The team can see exactly what is running where, and rolling back is simple.",
     category: "DevOps",
   },
   {
     id: "infra-as-code",
-    title: "Infrastructure as Code & On-Prem Deployments",
+    title: "Infrastructure as Code and On Prem Deployments",
     summary:
-      "Led infra automation with Terraform and Kubernetes, improving reliability and recovery.",
+      "Moved our infrastructure to code so we can spin up and recover environments quickly and consistently.",
     problem:
-      "On-prem deployments were manual, fragile, and lacked consistency across environments. Recovery from failures was slow and error-prone.",
+      "Our on prem deployments were done by hand and each environment was slightly different. When things broke, recovery took forever because nobody remembered exactly how things were set up.",
     solution:
-      "Introduced Terraform for provisioning infra and Helm/Kubernetes manifests for deployments. Containerized critical services and deployed them to EKS and on-prem clusters. Improved disaster recovery with automated failover scripts and Vault-based secret management.",
+      "I introduced Terraform for provisioning and Helm charts for Kubernetes deployments. Services run in containers on both EKS and our on prem clusters. I also set up Vault for managing secrets and wrote failover scripts for disaster recovery.",
     technologies: [
       "Terraform",
       "Kubernetes",
@@ -227,18 +227,18 @@ export const projects: Project[] = [
       "Traefik",
     ],
     features: [
-      "Infrastructure as Code (IaC) with Terraform",
-      "Hybrid deployment: On-Prem + EKS",
-      "Automated recovery and failover",
-      "Centralized secret management with Vault",
+      "All infrastructure is defined in Terraform",
+      "Works on both cloud and on prem",
+      "Automated failover when things go wrong",
+      "Secrets stored securely in Vault",
     ],
     challenges: [
-      "Migrating legacy workloads without downtime",
-      "Balancing infra across on-prem and cloud",
-      "Maintaining compliance during migration",
+      "Moving legacy apps without breaking them",
+      "Managing resources across cloud and on prem",
+      "Keeping everything compliant during the migration",
     ],
     impact:
-      "Improved infra reliability and cut recovery times by 50%. Enabled consistent deployments across on-prem and cloud environments.",
+      "We can now recover from failures quickly and spin up new environments in minutes. Everything is consistent and reproducible.",
     category: "DevOps",
   },
 
@@ -247,11 +247,11 @@ export const projects: Project[] = [
     id: "async-microservices",
     title: "Async Microservices Migration",
     summary:
-      "Scaled backend throughput by migrating a high-traffic monolith into async microservices.",
+      "Broke up a slow monolith into separate services that can handle more traffic and respond faster.",
     problem:
-      "A high-traffic monolith was unable to handle growing workloads, leading to latency spikes and scaling issues.",
+      "We had one big application trying to do everything. As traffic grew, response times got worse and the system struggled to keep up.",
     solution:
-      "Refactored the monolith into async Python microservices (FastAPI + Celery) with WebSocket support for real-time features. Containerized services and deployed on Kubernetes. Introduced Redis for caching and message brokering to improve throughput.",
+      "I split the monolith into async microservices using FastAPI and Celery. Added WebSocket support for real time features. Everything runs in containers on Kubernetes with Redis handling caching and message passing.",
     technologies: [
       "FastAPI",
       "Celery",
@@ -262,29 +262,29 @@ export const projects: Project[] = [
       "SQLAlchemy",
     ],
     features: [
-      "Async microservices for scalability",
-      "Background job execution with Celery",
-      "Real-time updates via WebSockets",
-      "Optimized database queries with SQLAlchemy",
+      "Services handle requests without blocking",
+      "Background jobs run through Celery",
+      "Real time updates over WebSockets",
+      "Database queries are optimized",
     ],
     challenges: [
-      "Breaking down tightly coupled monolith",
-      "Ensuring backwards compatibility",
-      "Managing async workflows with consistency",
+      "Untangling code that was tightly coupled",
+      "Making sure old clients still work",
+      "Keeping data consistent across services",
     ],
     impact:
-      "Improved throughput by 3x and reduced request latency by 40%. Backend became more resilient and scalable under peak load.",
+      "The system handles much more traffic now and responses are faster. It also scales better during peak times.",
     category: "Backend",
   },
   {
     id: "chatbot-microservice",
     title: "Chatbot Latency Optimization",
     summary:
-      "Migrated chatbot messaging into a socket-based microservice, reducing response latency.",
+      "Built a dedicated messaging service for our chatbot so responses come back faster.",
     problem:
-      "Legacy chatbot messaging was tightly coupled with the main backend, causing high latency and poor scalability.",
+      "The chatbot was part of the main backend, which made it slow. When traffic spiked, messages took too long to send and receive.",
     solution:
-      "Separated chatbot messaging into a standalone socket-based microservice. Used async I/O for faster handling of concurrent connections. Added monitoring and alerting for message delivery metrics.",
+      "I pulled the chatbot messaging into its own service using WebSockets and async Python. It runs independently now and can handle many connections at once. I added Grafana dashboards to monitor message delivery.",
     technologies: [
       "Python (asyncio)",
       "WebSockets",
@@ -295,18 +295,18 @@ export const projects: Project[] = [
       "Grafana",
     ],
     features: [
-      "Socket-based messaging microservice",
-      "Low-latency async communication",
-      "Real-time monitoring dashboards",
-      "Scalable containerized deployment",
+      "Dedicated service just for messaging",
+      "Async handling of connections",
+      "Live dashboards showing message metrics",
+      "Scales horizontally in Kubernetes",
     ],
     challenges: [
-      "Decoupling chatbot logic from legacy system",
-      "Managing high concurrent connections",
-      "Ensuring message delivery guarantees",
+      "Extracting chatbot code from the old system",
+      "Handling thousands of connections at once",
+      "Making sure no messages get lost",
     ],
     impact:
-      "Reduced chatbot response latency by 65%, improved scalability, and delivered smoother user experiences.",
+      "Chat responses are noticeably faster now and the experience feels much smoother for users.",
     category: "Backend",
   },
 
@@ -315,11 +315,11 @@ export const projects: Project[] = [
     id: "ai-streaming-agent",
     title: "AI Streaming Agent",
     summary:
-      "Designed a real-time AI agent pipeline for low-latency conversational intelligence.",
+      "Built a voice AI agent that responds in real time, so conversations feel natural instead of waiting for batch responses.",
     problem:
-      "Traditional AI agent responses were batch-based, leading to slow, delayed interactions that failed to meet real-time business needs.",
+      "Our AI agent worked in batches, which meant users had to wait several seconds for each response. It felt clunky and did not work for real conversations.",
     solution:
-      "Developed a streaming AI agent pipeline using Pipecat, LangChain, and async event-driven services. Integrated LLMs with speech-to-text (STT) and text-to-speech (TTS) pipelines to enable natural, low-latency interactions. Deployed the agent on Kubernetes with observability hooks for monitoring.",
+      "I built a streaming pipeline using Pipecat and LangChain. The system transcribes speech, sends it to an LLM, and speaks the response back, all happening continuously instead of in chunks. It runs on Kubernetes with monitoring to catch any issues.",
     technologies: [
       "Pipecat",
       "LangChain",
@@ -332,29 +332,29 @@ export const projects: Project[] = [
       "Grafana",
     ],
     features: [
-      "Real-time LLM response streaming",
-      "Low-latency STT/TTS pipelines",
-      "Scalable event-driven backend",
-      "Observability with metrics and traces",
+      "LLM responses stream as they are generated",
+      "Voice transcription and synthesis run with minimal delay",
+      "Handles many concurrent conversations",
+      "Full monitoring and tracing",
     ],
     challenges: [
-      "Managing jitter and response synchronization",
-      "Scaling real-time workloads across distributed services",
-      "Ensuring voice/text alignment during streaming",
+      "Keeping audio and text in sync",
+      "Running real time workloads at scale",
+      "Dealing with network jitter",
     ],
     impact:
-      "Reduced conversational latency to sub-second levels, enabling seamless real-time AI interactions for high-traffic use cases.",
+      "Conversations now feel responsive and natural. Users do not have to wait awkwardly for the AI to respond.",
     category: "AI/ML",
   },
   {
     id: "rag-contextual-ai",
-    title: "RAG-based Contextual AI System",
+    title: "RAG based Contextual AI System",
     summary:
-      "Implemented Retrieval-Augmented Generation pipelines for context-aware AI responses.",
+      "Built a system that connects our LLM to company knowledge so it gives accurate, relevant answers instead of making things up.",
     problem:
-      "LLMs alone produced hallucinations and lacked contextual awareness of company-specific knowledge.",
+      "When we used language models directly, they would sometimes give wrong information or make up facts. They had no idea about our company specific data.",
     solution:
-      "Designed a Retrieval-Augmented Generation (RAG) system using vector databases (Vectara + Redis) and LangGraph. Indexed internal knowledge sources and built pipelines that augment LLM queries with relevant documents before generation. Containerized services and deployed on EKS with automated retraining workflows.",
+      "I built a retrieval system that searches our internal documents and feeds relevant context to the LLM before it generates a response. Used Vectara for vector search and LangGraph to orchestrate the workflow. The whole thing runs on Kubernetes.",
     technologies: [
       "LangChain",
       "LangGraph",
@@ -365,29 +365,29 @@ export const projects: Project[] = [
       "Kubernetes (EKS)",
     ],
     features: [
-      "Context injection into LLM prompts",
-      "Vector search across company knowledge",
-      "Automated retraining workflows",
-      "Scalable RAG microservices on EKS",
+      "Pulls relevant documents before generating answers",
+      "Searches company knowledge using vectors",
+      "Updates automatically as knowledge changes",
+      "Scales to handle many queries",
     ],
     challenges: [
-      "Balancing relevance vs. speed in vector retrieval",
-      "Handling schema evolution in knowledge base",
-      "Ensuring accuracy under high query load",
+      "Finding the right balance between search quality and speed",
+      "Keeping the knowledge base up to date",
+      "Maintaining accuracy when traffic is high",
     ],
     impact:
-      "Improved response accuracy by 75% and reduced hallucinations, enabling domain-specific conversational AI across multiple teams.",
+      "Answers are much more accurate now and grounded in actual company information. Teams trust the AI responses more.",
     category: "AI/ML",
   },
   {
     id: "voice-ai-pipelines",
-    title: "Voice AI Pipelines (TTS/STT)",
+    title: "Voice AI Pipelines",
     summary:
-      "Built low-latency pipelines for speech-to-text and text-to-speech in production AI systems.",
+      "Built the speech recognition and voice synthesis parts of our AI system to make voice conversations feel natural.",
     problem:
-      "Voice interactions suffered from latency and poor synchronization between transcriptions and generated speech.",
+      "Voice features were slow and the audio often got out of sync with the text. Users noticed the delay and it hurt the experience.",
     solution:
-      "Engineered real-time voice pipelines by integrating STT engines with LLM backends and TTS models. Implemented buffering, early-response streaming, and URL handling optimizations. Deployed on Kubernetes with monitoring for throughput and jitter.",
+      "I built pipelines that handle speech to text and text to speech in real time. Added buffering to start responding before the full input is processed. Runs on Kubernetes with monitoring to track latency and catch problems.",
     technologies: [
       "Speech-to-Text (STT)",
       "Text-to-Speech (TTS)",
@@ -399,18 +399,54 @@ export const projects: Project[] = [
       "Grafana",
     ],
     features: [
-      "Streaming speech-to-text transcription",
-      "Low-latency text-to-speech synthesis",
-      "Buffering and early-response handling",
-      "Production-grade monitoring",
+      "Transcription happens as you speak",
+      "Voice responses start immediately",
+      "Smart buffering for smooth playback",
+      "Metrics for latency and throughput",
     ],
     challenges: [
-      "Minimizing first-sentence delay",
-      "Maintaining subtitle/audio alignment",
-      "Scaling concurrent voice sessions",
+      "Getting the first words out quickly",
+      "Keeping audio and text in sync",
+      "Handling many voice sessions at once",
     ],
     impact:
-      "Enabled natural voice-driven interactions with sub-second response time, powering conversational AI products at scale.",
+      "Voice interactions feel responsive now. The delay is barely noticeable and conversations flow naturally.",
+    category: "AI/ML",
+  },
+  {
+    id: "kdb-trade-ai-agent",
+    title: "AI Trade Query Agent with KDB+",
+    summary:
+      "Built an AI agent that lets users ask questions about trade data in plain language, powered by KDB+ for fast tick data queries.",
+    problem:
+      "Traders and analysts needed quick answers about market data but querying KDB+ directly required knowing q syntax. Non technical users had to wait for someone to run queries for them.",
+    solution:
+      "I built an AI streaming agent that understands natural language trade queries. The agent translates questions into q queries, runs them against our KDB+ tick database, and streams back results with context. Users just ask things like 'show me the top trades for AAPL in the last hour' and get instant answers.",
+    technologies: [
+      "KDB+",
+      "q",
+      "Pipecat",
+      "LangChain",
+      "FastAPI",
+      "WebSockets",
+      "Python",
+      "Kubernetes",
+    ],
+    features: [
+      "Natural language to q query translation",
+      "Real time streaming responses",
+      "Access to tick level trade data",
+      "Conversational follow up questions",
+      "Results formatted for easy reading",
+    ],
+    challenges: [
+      "Mapping natural language to correct q syntax",
+      "Handling ambiguous trade queries",
+      "Keeping response times low with large datasets",
+      "Making financial data understandable to non experts",
+    ],
+    impact:
+      "Analysts can now get trade insights in seconds without knowing q. The agent handles thousands of queries daily and has become the go to tool for quick market data lookups.",
     category: "AI/ML",
   },
 
@@ -419,11 +455,11 @@ export const projects: Project[] = [
     id: "realtime-dashboards",
     title: "Realtime Analytics Dashboards",
     summary:
-      "Built role-based, sub-second dashboards for high-throughput data streams.",
+      "Built dashboards that update live so teams can see what is happening right now instead of waiting for reports.",
     problem:
-      "Business teams had fragmented dashboards with delays of minutes, making real-time decision-making impossible.",
+      "Different teams had their own dashboards and data was often minutes old. By the time you saw a problem, it was too late to do anything.",
     solution:
-      "Developed dashboards in Next.js and TypeScript that consume Kafka/Flink pipeline outputs via APIs. Integrated WebSockets for live updates and role-based access control for different user groups. Optimized rendering performance with React hooks and memoization.",
+      "I built dashboards in Next.js that pull data from our streaming pipelines through WebSockets. Each team sees the metrics relevant to them. I optimized the rendering so it stays smooth even with lots of data coming in.",
     technologies: [
       "Next.js",
       "React",
@@ -434,30 +470,30 @@ export const projects: Project[] = [
       "TailwindCSS",
     ],
     features: [
-      "Sub-second live data updates",
-      "Role-based dashboards",
-      "Optimized state management",
-      "Responsive design for all devices",
+      "Data updates within a second",
+      "Different views for different roles",
+      "Smooth performance even with lots of data",
+      "Works on desktop and mobile",
     ],
     challenges: [
-      "Efficiently rendering large streaming datasets",
-      "Securing role-based data views",
-      "Synchronizing backend streams with frontend views",
+      "Rendering fast when data is streaming in",
+      "Making sure people only see what they should",
+      "Keeping frontend in sync with backend streams",
     ],
     impact:
-      "Cut decision latency from minutes to seconds. Improved adoption across business teams by providing clean, interactive dashboards.",
+      "Teams can now react to things as they happen. The dashboards are actually used because they show current information.",
     category: "Frontend",
   },
 
   {
     id: "component-ui-system",
-    title: "Component-driven UI System",
+    title: "Component driven UI System",
     summary:
-      "Created reusable React components with predictable state flows and robust testing.",
+      "Built a library of reusable UI components so the team can build features faster without reinventing the wheel.",
     problem:
-      "Frontend applications were inconsistent and lacked a unified design system. Bugs often reappeared due to weak testing.",
+      "Every project looked a bit different and bugs kept coming back. There was no shared library, so people built the same things over and over.",
     solution:
-      "Developed a reusable UI library with React, Zustand for predictable state flows, and TailwindCSS for styling. Wrote unit and component tests with Jest and React Testing Library, enforcing coverage thresholds.",
+      "I created a component library in React with Zustand for state management and TailwindCSS for styling. Every component has tests, and we enforce coverage in CI. Teams can just grab components and use them.",
     technologies: [
       "React",
       "Zustand",
@@ -467,18 +503,18 @@ export const projects: Project[] = [
       "React Testing Library",
     ],
     features: [
-      "Reusable component library",
-      "Predictable global state flows",
-      "Test coverage enforcement",
-      "Lightweight, responsive design",
+      "Ready to use components",
+      "State management that makes sense",
+      "Tests catch bugs before they ship",
+      "Works on any screen size",
     ],
     challenges: [
-      "Aligning component designs across teams",
-      "Avoiding prop-drilling with shared state",
-      "Maintaining test coverage with CI/CD",
+      "Getting teams to agree on designs",
+      "Sharing state without passing props everywhere",
+      "Keeping test coverage high as we add features",
     ],
     impact:
-      "Increased frontend development speed by 40% and reduced UI bugs by 60%. Established a scalable UI foundation for future apps.",
+      "Building new features is faster now and the UI is consistent across apps. Fewer bugs make it to production.",
     category: "Frontend",
   },
 
@@ -487,11 +523,11 @@ export const projects: Project[] = [
     id: "observability-systems",
     title: "Observability for Distributed Systems",
     summary:
-      "Deployed full monitoring and alerting stack for microservices and data pipelines.",
+      "Set up monitoring and alerting so we can see what is happening across all our services and fix issues quickly.",
     problem:
-      "Teams lacked visibility into distributed services, leading to long mean time to recovery (MTTR) during incidents.",
+      "When something broke, it took forever to figure out what went wrong. We had no visibility into our distributed services.",
     solution:
-      "Integrated Prometheus, Grafana, and New Relic for metrics and traces. Used OpenTelemetry (OTLP) for standardized tracing across microservices. Built Grafana dashboards for latency, throughput, and error rates, enabling proactive monitoring.",
+      "I set up Prometheus and Grafana for metrics, with New Relic for additional tracing. Used OpenTelemetry to trace requests across services. Built dashboards that show latency, errors, and throughput so teams can spot problems early.",
     technologies: [
       "Prometheus",
       "Grafana",
@@ -501,29 +537,29 @@ export const projects: Project[] = [
       "Kubernetes Dashboards",
     ],
     features: [
-      "Centralized logging and metrics",
-      "Custom Grafana dashboards per service",
-      "Standardized OTLP tracing",
-      "Real-time incident detection",
+      "All logs and metrics in one place",
+      "Dashboards tailored for each service",
+      "Traces that follow requests across services",
+      "Alerts that catch issues before users notice",
     ],
     challenges: [
-      "Instrumenting legacy services",
-      "Scaling observability across microservices",
-      "Balancing logging volume vs. cost",
+      "Adding monitoring to old services",
+      "Keeping costs reasonable as we add more services",
+      "Not logging so much that it becomes expensive",
     ],
     impact:
-      "Reduced MTTR by 45% and enabled proactive incident detection. Improved developer confidence in deployments and system reliability.",
+      "We find and fix problems much faster now. Developers feel more confident shipping because they can see what is happening.",
     category: "Observability",
   },
   {
     id: "error-alerting",
-    title: "Error Alerting & Chat Based Tools Integration",
+    title: "Error Alerting and Slack Integration",
     summary:
-      "Integrated error alerts with team communication tools for faster response times.",
+      "Connected our error tracking to Slack so the team finds out about problems right away instead of from users.",
     problem:
-      "Errors in production often went unnoticed until end-users reported them, slowing recovery.",
+      "Bugs in production would go unnoticed for hours. We only found out when customers complained.",
     solution:
-      "Connected Sentry and release alerts directly into chat-based tools (Slack). Configured severity-based escalation policies and automated release notifications. Linked alerts with incident tracking workflows.",
+      "I hooked Sentry up to Slack so errors show up in the right channels immediately. Set up escalation rules based on severity. Release notifications also go to Slack so everyone knows when new code goes out.",
     technologies: [
       "Sentry",
       "Slack API",
@@ -531,18 +567,18 @@ export const projects: Project[] = [
       "Bitbucket Pipelines",
     ],
     features: [
-      "Real-time error notifications in Slack",
-      "Release alerts with build info",
-      "Severity-based escalation",
-      "Integration with CI/CD pipelines",
+      "Errors pop up in Slack right away",
+      "Release info posted to team channels",
+      "Critical errors page the on call person",
+      "Ties into our CI/CD pipeline",
     ],
     challenges: [
-      "Reducing false-positive alerts",
-      "Training teams to respond via ChatOps",
-      "Ensuring alert routing across time zones",
+      "Filtering out noise so people pay attention",
+      "Getting the team used to responding in Slack",
+      "Routing alerts correctly across time zones",
     ],
     impact:
-      "Reduced average incident response time by 50% and increased team collaboration through ChatOps-driven workflows.",
+      "We catch issues much faster now and the team collaborates better because everything is visible in Slack.",
     category: "Observability",
   },
 ];
@@ -554,11 +590,11 @@ export const experience: Experience[] = [
     start: "Aug 2024",
     end: "Present",
     responsibilities: [
-      "Designed and deployed AI streaming agents aligned with business goals.",
-      "Built real-time and near real-time analytics pipelines enabling faster insights.",
-      "Migrated high-traffic monolith into async microservices, improving throughput and latency.",
-      "Enhanced CI/CD workflows, reducing deployment time and improving release stability.",
-      "Improved distributed system architecture for scalability and reliability.",
+      "Building AI voice agents that respond in real time using streaming pipelines",
+      "Working on analytics systems that process data as it comes in so teams get insights quickly",
+      "Broke apart a large monolith into smaller async services that handle more traffic",
+      "Set up deployment pipelines that make releases faster and more reliable",
+      "Improving how our distributed systems are designed so they scale better",
     ],
     technologies: [
       "FastAPI",
@@ -583,11 +619,11 @@ export const experience: Experience[] = [
     start: "Jun 2022",
     end: "Aug 2024",
     responsibilities: [
-      "Led on-prem platform deployments and ops, improving reliability and recovery.",
-      "Implemented a custom API gateway unifying routing for internal microservices.",
-      "Migrated chatbot messaging into a socket-based microservice, reducing latency.",
-      "Integrated SSO and chat-based error/release alerts for deployment visibility.",
-      "Automated router activation and policy updates by migrating legacy ETL to Airflow DAGs.",
+      "Handled on prem deployments and made our infrastructure more reliable",
+      "Built an API gateway to manage routing across our internal services",
+      "Pulled out chatbot messaging into its own service to make responses faster",
+      "Added SSO and set up Slack alerts so the team knows about errors and releases",
+      "Rewrote old ETL jobs as Airflow workflows for router and policy updates",
     ],
     technologies: [
       "Python",
@@ -603,7 +639,7 @@ export const experience: Experience[] = [
     notableProjects: [
       "Workflow Automation with Airflow",
       "Chatbot Latency Optimization",
-      "Infrastructure as Code & On-Prem Deployments",
+      "Infrastructure as Code and On Prem Deployments",
     ],
   },
   {
@@ -612,11 +648,11 @@ export const experience: Experience[] = [
     start: "Jan 2022",
     end: "Jun 2022",
     responsibilities: [
-      "Developed component-driven UIs with typed interfaces and predictable state flows.",
-      "Implemented RESTful endpoints, async pub/sub, and event-triggered functions.",
-      "Containerized services and deployed them to staging clusters with Kubernetes manifests.",
-      "Designed database schemas across SQL/NoSQL with migrations and query optimizations.",
-      "Wrote unit and component tests with mocks, catching regressions early.",
+      "Built frontend components in React with TypeScript and managed state with Redux",
+      "Created REST APIs and worked with message queues for async processing",
+      "Learned to containerize apps and deploy them to Kubernetes",
+      "Designed database schemas and wrote migrations for both SQL and NoSQL databases",
+      "Wrote tests to catch bugs before they reached production",
     ],
     technologies: [
       "React",
@@ -627,13 +663,13 @@ export const experience: Experience[] = [
       "Docker",
       "Kubernetes",
     ],
-    notableProjects: ["Component-driven UI System"],
+    notableProjects: ["Component driven UI System"],
   },
 ];
 
 export const certifications: Certification[] = [
   {
-    name: "AWS Certified Solutions Architect – Associate",
+    name: "AWS Certified Solutions Architect Associate",
     issuer: "Amazon",
     year: "2023",
   },
@@ -641,6 +677,11 @@ export const certifications: Certification[] = [
     name: "CKA: Certified Kubernetes Administrator",
     issuer: "CNCF",
     year: "2022",
+  },
+  {
+    name: "Q Developer Level 2",
+    issuer: "KX Systems",
+    year: "2024",
   },
 ];
 

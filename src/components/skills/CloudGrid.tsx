@@ -1,18 +1,27 @@
 "use client";
 
 import GridBase from "@/components/skills/GridBase";
-import { TbBrandAws, TbBrandAzure, TbBrandGoogle, TbBrandVercel, TbBrandCloudflare, TbLambda, TbFunction } from "react-icons/tb";
+import { 
+    SiAmazonwebservices, 
+    SiGooglecloud, 
+    SiVercel, 
+    SiCloudflare,
+    SiAwslambda,
+    SiAmazoneks,
+    SiAmazons3
+} from "react-icons/si";
 
 export default function CloudGrid() {
     return (
         <GridBase
             items={[
-                { name: "AWS", Icon: TbBrandAws },
-                { name: "Google Cloud", Icon: TbBrandGoogle },
-                { name: "Serverless", Icon: TbLambda },
-                { name: "Cloud Functions", Icon: TbFunction },
-                { name: "CDN", Icon: TbBrandCloudflare },
-                { name: "Vercel", Icon: TbBrandVercel },
+                { name: "AWS", Icon: SiAmazonwebservices },
+                { name: "Google Cloud", Icon: SiGooglecloud },
+                { name: "Lambda", Icon: SiAwslambda },
+                { name: "EKS", Icon: SiAmazoneks },
+                { name: "S3", Icon: SiAmazons3 },
+                { name: "Cloudflare", Icon: SiCloudflare },
+                { name: "Vercel", Icon: SiVercel },
             ]}
         />
     );

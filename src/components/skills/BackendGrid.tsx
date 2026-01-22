@@ -1,8 +1,8 @@
 "use client";
 
 import GridBase from "@/components/skills/GridBase";
-import { SiNodedotjs, SiSpringboot, SiDjango, SiExpress, SiFastapi, SiGraphql, SiGoland, SiElixir } from "react-icons/si";
-import { TbApi, TbTopologyStar3, TbPlugConnected } from "react-icons/tb";
+import { SiNodedotjs, SiDjango, SiExpress, SiFastapi, SiGraphql, SiGo, SiElixir, SiCelery } from "react-icons/si";
+import { TbApi, TbHexagons, TbWebhook } from "react-icons/tb";
 
 export default function BackendGrid() {
     return (
@@ -10,14 +10,15 @@ export default function BackendGrid() {
             items={[
                 { name: "Node.js", Icon: SiNodedotjs },
                 { name: "Django", Icon: SiDjango },
-                { name: "Golang", Icon: SiGoland },
+                { name: "Go", Icon: SiGo },
                 { name: "Elixir", Icon: SiElixir },
                 { name: "Express.js", Icon: SiExpress },
                 { name: "FastAPI", Icon: SiFastapi },
+                { name: "Celery", Icon: SiCelery },
                 { name: "GraphQL", Icon: SiGraphql },
                 { name: "REST APIs", Icon: TbApi },
-                { name: "Microservices", Icon: TbTopologyStar3 },
-                { name: "WebSockets", Icon: TbPlugConnected },
+                { name: "Microservices", Icon: TbHexagons },
+                { name: "WebSockets", Icon: TbWebhook },
             ]}
         />
     );
